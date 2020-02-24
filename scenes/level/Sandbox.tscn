@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/components/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/components/DummyGuy.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 464.895, 293.535 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -204.0
+margin_top = -60.0
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 224.0
+margin_bottom = 80.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/MarginContainer/HBoxContainer"]
+margin_right = 90.0
+margin_bottom = 60.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Skill1" type="Button" parent="Camera2D/MarginContainer/HBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 70.0
+margin_bottom = 40.0
+text = "Skill 1"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Camera2D/MarginContainer/HBoxContainer"]
+margin_left = 94.0
+margin_right = 184.0
+margin_bottom = 60.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Skill2" type="Button" parent="Camera2D/MarginContainer/HBoxContainer/MarginContainer2"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 70.0
+margin_bottom = 40.0
+text = "Skill 2"
+
+[node name="DummyGuy" parent="." instance=ExtResource( 2 )]
+position = Vector2( -468.063, 188.394 )
+
+[node name="DummyGuy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -457.515, -340.79 )
